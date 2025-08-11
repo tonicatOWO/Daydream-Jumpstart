@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cwrs0v6vewug4"]
+
+[ext_resource type="Script" uid="uid://dv8c781eduhye" path="res://Assets/Scripts/check_point.gd" id="1_nm1k0"]
+[ext_resource type="Texture2D" uid="uid://cxabokwpjabsj" path="res://Assets/ston.png" id="2_ukfyi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6a56a"]
+size = Vector2(20, 69)
+
+[node name="checkPoint" type="Area2D"]
+script = ExtResource("1_nm1k0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_6a56a")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
+position = Vector2(0, 29)
+texture = ExtResource("2_ukfyi")
+
+[node name="respawnPoint" type="Marker2D" parent="."]
+position = Vector2(26, 0)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

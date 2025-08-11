@@ -9,7 +9,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../player/Sprite2D:region_rect")
+tracks/0/path = NodePath("../body/Sprite2D:region_rect")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -25,7 +25,7 @@ step = 0.25
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../player/Sprite2D:region_rect")
+tracks/0/path = NodePath("../body/Sprite2D:region_rect")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -41,7 +41,7 @@ step = 0.25
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../player/Sprite2D:region_rect")
+tracks/0/path = NodePath("../body/Sprite2D:region_rect")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -58,7 +58,7 @@ step = 0.25
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../player/Sprite2D:region_rect")
+tracks/0/path = NodePath("../body/Sprite2D:region_rect")
 tracks/0/interp = 0
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -76,7 +76,7 @@ step = 0.25
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../player/Sprite2D:region_rect")
+tracks/0/path = NodePath("../body/Sprite2D:region_rect")
 tracks/0/interp = 0
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -99,7 +99,7 @@ _data = {
 radius = 4.0
 height = 14.0
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
 collision_mask = 768
 script = ExtResource("1_g5ct4")
 
@@ -107,21 +107,21 @@ script = ExtResource("1_g5ct4")
 zoom = Vector2(5, 5)
 position_smoothing_enabled = true
 
-[node name="player" type="Node2D" parent="." node_paths=PackedStringArray("playerControler", "ani", "sprite")]
+[node name="body" type="Node2D" parent="." node_paths=PackedStringArray("playerControler", "ani", "sprite")]
 position = Vector2(0, -1)
 script = ExtResource("2_36gbj")
 playerControler = NodePath("..")
 ani = NodePath("AnimationPlayer")
 sprite = NodePath("Sprite2D")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="player"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="body"]
 root_node = NodePath("../../CollisionShape2D")
 libraries = {
 &"": SubResource("AnimationLibrary_36gbj")
 }
 speed_scale = 1.5
 
-[node name="Sprite2D" type="Sprite2D" parent="player"]
+[node name="Sprite2D" type="Sprite2D" parent="body"]
 texture = ExtResource("1_ast1v")
 flip_h = true
 region_enabled = true
