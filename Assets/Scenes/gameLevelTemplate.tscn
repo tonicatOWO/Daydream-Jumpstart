@@ -1,7 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://wcwpy6hoo0ch"]
+[gd_scene load_steps=9 format=3 uid="uid://wcwpy6hoo0ch"]
 
 [ext_resource type="Texture2D" uid="uid://cuskbysyiq3ol" path="res://Assets/tiles_1.png" id="1_24f6u"]
 [ext_resource type="PackedScene" uid="uid://d1q8hxkhq0drq" path="res://Assets/Scenes/character_body_2d.tscn" id="2_k0vnh"]
+[ext_resource type="PackedScene" uid="uid://hxpqn3gnuomg" path="res://Assets/Scenes/check_point_manager.tscn" id="3_11g13"]
+[ext_resource type="PackedScene" uid="uid://cwrs0v6vewug4" path="res://Assets/Scenes/check_point.tscn" id="4_5jwdn"]
+[ext_resource type="PackedScene" uid="uid://csa6llra6avi6" path="res://Assets/Scenes/death_zone.tscn" id="5_hh7o2"]
+[ext_resource type="PackedScene" uid="uid://qvyqq83mxc6m" path="res://Assets/Scenes/area_exit.tscn" id="6_0wlhb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k0vnh"]
 texture = ExtResource("1_24f6u")
@@ -340,3 +344,17 @@ position = Vector2(0, -3)
 platform_on_leave = 2
 speed = 5.0
 jump_power = 8.5
+
+[node name="checkPointManager" parent="." instance=ExtResource("3_11g13")]
+
+[node name="checkPoint" parent="checkPointManager" instance=ExtResource("4_5jwdn")]
+position = Vector2(-37, -16)
+
+[node name="deathZoneManager" type="Node2D" parent="."]
+position = Vector2(1, -1)
+
+[node name="deathZone" parent="deathZoneManager" instance=ExtResource("5_hh7o2")]
+position = Vector2(-129, 28)
+
+[node name="Area2D" parent="." instance=ExtResource("6_0wlhb")]
+position = Vector2(161, -11)

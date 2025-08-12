@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0qdfudogb10y"]
+
+[ext_resource type="PackedScene" uid="uid://wcwpy6hoo0ch" path="res://Assets/Scenes/gameLevelTemplate.tscn" id="1_uv3b3"]
+
+[node name="gmae" instance=ExtResource("1_uv3b3")]
+
+[node name="deathZone" parent="deathZoneManager" index="0"]
+position = Vector2(-3.00001, 63)
+scale = Vector2(7.8072, -0.111198)
+
+[node name="Area2D" parent="." index="4"]
+visible = false
+
+[node name="Label" type="Label" parent="." index="5"]
+offset_left = 47.0
+offset_top = -71.0
+offset_right = 101.0
+offset_bottom = -22.0
+text = "Hello ~
+u Win   pwp"

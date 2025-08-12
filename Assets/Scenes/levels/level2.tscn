@@ -1,8 +1,61 @@
-[gd_scene load_steps=2 format=3 uid="uid://cf8nc3grqeq21"]
+[gd_scene load_steps=6 format=3 uid="uid://cf8nc3grqeq21"]
 
 [ext_resource type="PackedScene" uid="uid://wcwpy6hoo0ch" path="res://Assets/Scenes/gameLevelTemplate.tscn" id="1_k5chh"]
+[ext_resource type="PackedScene" uid="uid://kn1qp0mmhkdv" path="res://Assets/Scenes/coin.tscn" id="2_k5chh"]
+[ext_resource type="PackedScene" uid="uid://bvfmoutqbu4iq" path="res://Assets/Scenes/moving_plateform.tscn" id="3_0luvd"]
+
+[sub_resource type="Curve2D" id="Curve2D_b882l"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 8.86433, -41.5466, 0, 0, 0, 0, -53, -120.751)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_iuq70"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 8.86433, -41.5466, 0, 0, 0, 0, 148, -42)
+}
+point_count = 2
 
 [node name="gmae" instance=ExtResource("1_k5chh")]
 
+[node name="TileMap" parent="." index="0"]
+scale = Vector2(0.706604, 1.32908)
+layer_0/tile_data = PackedInt32Array(131078, 131072, 5, 65542, 131072, 4, 131077, 65536, 5, 65541, 65536, 4, 131076, 65536, 5, 65540, 65536, 4, 131075, 65536, 5, 65539, 65536, 4, 131074, 65536, 5, 65538, 65536, 4, 131073, 65536, 5, 65537, 65536, 4, 131072, 65536, 5, 65536, 65536, 4, 196607, 65536, 5, 131071, 65536, 4, 196606, 65536, 5, 131070, 65536, 4, 196605, 65536, 5, 131069, 65536, 4, 196604, 65536, 5, 131068, 65536, 4, 196603, 0, 5, 131067, 0, 4, 327686, 131072, 6, 262150, 131072, 5, 196614, 131072, 5, 327685, 65536, 6, 262149, 65536, 5, 196613, 65536, 5, 327684, 65536, 6, 262148, 65536, 5, 196612, 65536, 5, 327683, 65536, 6, 262147, 65536, 5, 196611, 65536, 5, 327682, 65536, 6, 262146, 65536, 5, 196610, 65536, 5, 327681, 65536, 6, 262145, 65536, 5, 196609, 65536, 5, 327680, 65536, 6, 262144, 65536, 5, 196608, 65536, 5, 393215, 65536, 6, 327679, 65536, 5, 262143, 65536, 5, 393214, 65536, 6, 327678, 65536, 5, 262142, 65536, 5, 393213, 65536, 6, 327677, 65536, 5, 262141, 65536, 5, 393212, 65536, 6, 327676, 65536, 5, 262140, 65536, 5, 393211, 0, 6, 327675, 0, 5, 262139, 0, 5, 327712, 131072, 6, 262176, 131072, 5, 196640, 131072, 5, 131104, 131072, 5, 65568, 131072, 4, 327711, 65536, 6, 262175, 65536, 5, 196639, 65536, 5, 131103, 65536, 5, 65567, 65536, 4, 327710, 65536, 6, 262174, 65536, 5, 196638, 65536, 5, 131102, 65536, 5, 65566, 65536, 4, 327709, 65536, 6, 262173, 65536, 5, 196637, 65536, 5, 131101, 65536, 5, 65565, 65536, 4, 327708, 65536, 6, 262172, 65536, 5, 196636, 65536, 5, 131100, 65536, 5, 65564, 65536, 4, 327707, 65536, 6, 262171, 65536, 5, 196635, 65536, 5, 131099, 65536, 5, 65563, 65536, 4, 327706, 65536, 6, 262170, 65536, 5, 196634, 65536, 5, 131098, 65536, 5, 65562, 65536, 4, 327705, 65536, 6, 262169, 65536, 5, 196633, 65536, 5, 131097, 65536, 5, 65561, 65536, 4, 327704, 65536, 6, 262168, 65536, 5, 196632, 65536, 5, 131096, 65536, 5, 65560, 65536, 4, 327703, 65536, 6, 262167, 65536, 5, 196631, 65536, 5, 131095, 65536, 5, 65559, 65536, 4, 327702, 65536, 6, 262166, 65536, 5, 196630, 65536, 5, 131094, 65536, 5, 65558, 65536, 4, 327701, 65536, 6, 262165, 65536, 5, 196629, 65536, 5, 131093, 65536, 5, 65557, 65536, 4, 327700, 0, 6, 262164, 0, 5, 196628, 0, 5, 131092, 0, 5, 65556, 0, 4)
+layer_1/tile_data = PackedInt32Array(-262119, 131072, 3, -262120, 65536, 3, -262121, 65536, 3, -262122, 65536, 3, -262123, 65536, 3, -262124, 65536, 3, -262125, 65536, 3, -262126, 65536, 3, -262127, 65536, 3, -262128, 65536, 3, -262129, 65536, 3, -262130, 65536, 3, -262131, 65536, 3, -262132, 0, 3)
+
 [node name="Player" parent="." index="1"]
 position = Vector2(-20, -12)
+
+[node name="deathZone" parent="deathZoneManager" index="0"]
+position = Vector2(144, 97)
+scale = Vector2(7.82702, 0.00612526)
+
+[node name="Area2D" parent="." index="4"]
+position = Vector2(72, -22)
+
+[node name="coinCells" type="Node2D" parent="." index="5"]
+
+[node name="coin" parent="coinCells" index="0" instance=ExtResource("2_k5chh")]
+position = Vector2(147, 2)
+
+[node name="coin2" parent="coinCells" index="1" instance=ExtResource("2_k5chh")]
+position = Vector2(129, -110)
+
+[node name="coin3" parent="coinCells" index="2" instance=ExtResource("2_k5chh")]
+position = Vector2(91, -68)
+
+[node name="coin4" parent="coinCells" index="3" instance=ExtResource("2_k5chh")]
+position = Vector2(105, -94)
+
+[node name="movingPlateform2" parent="." index="6" instance=ExtResource("3_0luvd")]
+position = Vector2(349, 53.606)
+scale = Vector2(1, 0.990517)
+curve = SubResource("Curve2D_b882l")
+looping = false
+
+[node name="movingPlateform" parent="." index="7" instance=ExtResource("3_0luvd")]
+position = Vector2(83, 65)
+curve = SubResource("Curve2D_iuq70")
+looping = false
